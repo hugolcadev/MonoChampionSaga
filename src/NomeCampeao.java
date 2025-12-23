@@ -90,6 +90,7 @@ public enum NomeCampeao {
 
     MALPHITE("Malphite"),
     MALZAHAR("Malzahar"),
+    MEL("Mel"),
     MAOKAI("Maokai"),
     MASTER_YI("Master Yi"),
     MILIO("Milio"),
