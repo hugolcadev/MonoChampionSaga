@@ -1,3 +1,4 @@
+package model;
 public enum NomeCampeao {
 
     AATROX("Aatrox"),
