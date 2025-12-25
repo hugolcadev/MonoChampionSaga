@@ -2,6 +2,7 @@ package model;
 public class Campeao {
     private NomeCampeao nome;
     private String anotacoes;
+    
     //private String build;
     //private String runas;
     public Campeao(NomeCampeao nome, String anotacoes) {
