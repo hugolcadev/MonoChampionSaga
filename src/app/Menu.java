@@ -1,4 +1,5 @@
 package app;
+import java.util.List;
 import java.util.Scanner;
 
 import content.SobreProjeto;
@@ -22,21 +23,34 @@ public class Menu {
     private void interacoesMenu(int op){
         switch (op){
         case 1:
-            //TODO
-        case 2:            
+            criarNovoCampeao();
+            break;
+        case 2:     
+            //carregarProgressoExistente();
+            //break;       
             //TODO
         case 3:
-            System.out.println(SobreProjeto.TEXTO);
-        
+            mostrarSobreProjeto();
+            break;
         case 4:
-            return;
+            //sair();
+            //break;
         }
     }
 
     private void criarNovoCampeao(){
-        NomeCampeao nome;
-        String anotacoes;
-        System.out.println();
-        
+        System.out.println("Digite a letra inicial do campeão: ");
+        char x = sc.next().charAt(0);
+        exibeListaCampeoes(NomeCampeao.filtrarPorLetra(x));
+        System.out.println("Digite o número correspondente ao seu campeão: ");
+    }
+    private void mostrarSobreProjeto(){
+        System.out.println(SobreProjeto.TEXTO);
+    }
+
+    public void exibeListaCampeoes(List<NomeCampeao> lista){
+        for (int i=0; i<lista.size(); i++){
+            System.out.println((i+1) + " - " + lista.get(i).getNomeExibicao());
+        }
     }
 }

@@ -1,4 +1,8 @@
 package model;
+
+import java.util.List;
+import java.util.ArrayList;
+
 public enum NomeCampeao {
 
     AATROX("Aatrox"),
@@ -209,5 +213,17 @@ public enum NomeCampeao {
         return nomeExibicao;
     }
 
+    public static List<NomeCampeao> filtrarPorLetra(char letra){
+        List<NomeCampeao> lista = new ArrayList<>();
+        letra = Character.toUpperCase(letra);
+
+        for (NomeCampeao c : values()){
+            if (c.getNomeExibicao().toUpperCase().charAt(0) == letra){
+                lista.add(c);
+            }
+        }
+        return lista;
+
+    }
 
 }
