@@ -23,14 +23,14 @@ public class Menu {
     private void interacoesMenu(int op){
         switch (op){
         case 1:
-            criarNovoCampeao();
+            criaNovoCampeao();
             break;
         case 2:     
             //carregarProgressoExistente();
             //break;       
             //TODO
         case 3:
-            mostrarSobreProjeto();
+            mostraSobreProjeto();
             break;
         case 4:
             //sair();
@@ -38,13 +38,13 @@ public class Menu {
         }
     }
 
-    private void criarNovoCampeao(){
+    private void criaNovoCampeao(){
         System.out.println("Digite a letra inicial do campeão: ");
         char x = sc.next().charAt(0);
         exibeListaCampeoes(NomeCampeao.filtrarPorLetra(x));
         System.out.println("Digite o número correspondente ao seu campeão: ");
     }
-    private void mostrarSobreProjeto(){
+    private void mostraSobreProjeto(){
         System.out.println(SobreProjeto.TEXTO);
     }
 
