@@ -15,9 +15,6 @@ public class Campeao {
         //this.build = build;
         //this.runas = runas;
     }
-    public Campeao(){
-
-    }
 
     public void adicionarMachup(Matchup matchup){
         matchups.add(matchup);
