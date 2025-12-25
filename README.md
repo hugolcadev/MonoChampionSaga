@@ -1,18 +1,15 @@
-## Getting Started
+MonoChampion SAGA é um projeto pessoal que decidi implementar com o propósito de auxiliar jogadores de League of Legends
+que desejam se aperfeiçoar em um campeão específico e atingir os níveis mais altos da fila ranqueada.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+O programa oferece ferramentas para registrar e organizar suas experiências com o campeão, visando maximizar o aprendizado
+ao longo do tempo. Sua principal funcionalidade é o sistema de matchups, no qual é possível catalogar confrontos já
+enfrentados e adicionar observações valiosas sobre cada combate.
 
-## Folder Structure
+Trata-se de uma ferramenta poderosa, criada com base na forma como os melhores jogadores da fila ranqueada analisam
+e interpretam o jogo.
 
-The workspace contains two folders by default, where:
+Mas por que registrar matchups é tão importante?
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+No momento da criação deste programa, o jogo conta com 172 campeões. Cada um possui 4 habilidades e 1 passiva única,
+que interagem de maneira diferente com todos os outros campeões do jogo. Saber quais habilidades respeitar, punir ou
+priorizar em cada confronto é um dos fatores-chave para vencer partidas.
