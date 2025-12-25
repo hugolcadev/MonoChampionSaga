@@ -1,18 +1,9 @@
-## Getting Started
+Sobre o projeto
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este é um projeto pessoal que desenvolvi com o objetivo de auxiliar jogadores de League of Legends - um jogo que gosto muito - a alcançar um alto nível de performance.
 
-## Folder Structure
+O programa consiste no registro e na organização de informações relevantes sobre os confrontos entre os personagens do jogo, conhecidos como campeões. Cada campeão possui características únicas, contando com quatro habilidades ativas e uma habilidade passiva distintas.
 
-The workspace contains two folders by default, where:
+Atualmente, o jogo conta com 172 campeões, o que gera uma enorme variedade de interações possíveis. Cada confronto é único, e a forma como as habilidades são utilizadas influencia diretamente o resultado do combate.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Com isso em mente, este programa permite que o usuário registre observações detalhadas a cada nova interação com um oponente, facilitando o aprendizado, a tomada de decisões e a evolução contínua dentro do jogo.
