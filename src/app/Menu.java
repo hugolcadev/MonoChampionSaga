@@ -17,6 +17,9 @@ public class Menu {
     
     private void interacoesMenu(int op){
         switch (op){
+        case 1:
+            
+        
         case 4:
             System.out.println(SobreProjeto.TEXTO);
         }

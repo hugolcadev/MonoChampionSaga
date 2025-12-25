@@ -1,8 +1,12 @@
 package model;
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class Campeao {
     private NomeCampeao nome;
     private String anotacoes;
-    
+    private List<Matchup> matchups = new ArrayList<Matchup>();
     //private String build;
     //private String runas;
     public Campeao(NomeCampeao nome, String anotacoes) {
@@ -15,6 +19,9 @@ public class Campeao {
 
     }
 
+    public void adicionarMachup(Matchup matchup){
+        matchups.add(matchup);
+    }
     public NomeCampeao getNome() {
         return nome;
     }
