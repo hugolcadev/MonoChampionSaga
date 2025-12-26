@@ -39,10 +39,19 @@ public class Menu {
     }
 
     private void criaNovoCampeao(){
-        System.out.println("Digite a letra inicial do campeão: ");
-        char x = sc.next().charAt(0);
-        exibeListaCampeoes(NomeCampeao.filtrarPorLetra(x));
-        System.out.println("Digite o número correspondente ao seu campeão: ");
+        NomeCampeao nome = selecionarCampeaoPorLetra();
+
+        if (nome == null){
+            return;
+        }
+
+        sc.nextLine();
+        System.out.println("Anotações iniciais: ");
+        String anotacoes = sc.nextLine();
+
+        Campeao campeaoPrincipal = new Campeao(nome, anotacoes);
+
+        System.out.println("Main criado com sucesso: " + campeaoPrincipal.getNome().getNomeExibicao());
     }
     private void mostraSobreProjeto(){
         System.out.println(SobreProjeto.TEXTO);
@@ -53,4 +62,32 @@ public class Menu {
             System.out.println((i+1) + " - " + lista.get(i).getNomeExibicao());
         }
     }
+
+    private NomeCampeao selecionarCampeaoPorLetra(){
+
+        System.out.println("Digite a letra inicial do campeão: ");
+        char x = sc.next().charAt(0);
+
+        List <NomeCampeao> lista = NomeCampeao.filtrarPorLetra(x);
+
+        if (lista.isEmpty()){
+            System.out.println("Nenhum campeão encontrado.");
+            return null;
+        }
+
+        exibeListaCampeoes(lista);
+
+        System.out.println("Digite o número correspondente ao campeão: ");
+        int escolha = sc.nextInt();
+
+        if (escolha < 1 || escolha > lista.size()){
+            System.out.println("Opção inválida.");
+            return null;
+        }else{
+            return lista.get(escolha-1);
+        }
+
+    }
 }
+
+    

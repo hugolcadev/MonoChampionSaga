@@ -16,6 +16,10 @@ public class Campeao {
         //this.runas = runas;
     }
 
+    public Campeao(NomeCampeao nome){
+        this.nome = nome;
+    }
+
     public void adicionarMachup(Matchup matchup){
         matchups.add(matchup);
     }
