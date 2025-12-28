@@ -5,6 +5,7 @@ import java.util.Scanner;
 import content.SobreProjeto;
 import model.Campeao;
 import model.NomeCampeao;
+import app.MenuCampeao;
 
 public class MenuInicial {
     private Scanner sc = new Scanner(System.in);
@@ -23,7 +24,9 @@ public class MenuInicial {
     private void interacoes(int op){
         switch (op){
         case 1:
-            criaNovoCampeao();
+            Campeao campeaoPrincipal = criaNovoCampeao();
+            MenuCampeao menuCampeao = new MenuCampeao(campeaoPrincipal, sc);
+            menuCampeao.iniciar();
             break;
         case 2:     
             //carregarProgressoExistente();
@@ -38,20 +41,18 @@ public class MenuInicial {
         }
     }
             //TODO
-    private void criaNovoCampeao(){
+    private Campeao criaNovoCampeao(){
         NomeCampeao nome = selecionarCampeaoPorLetra();
 
         if (nome == null){
-            return;
+            return null;
         }
 
         sc.nextLine();
         System.out.println("Anotações iniciais: ");
         String anotacoes = sc.nextLine();
-
-        Campeao campeaoPrincipal = new Campeao(nome, anotacoes);
-
-        System.out.println("Main criado com sucesso: " + campeaoPrincipal.getNome().getNomeExibicao());
+        System.out.println("Main criado com sucesso: " + nome.getNomeExibicao());
+        return new Campeao(nome, anotacoes);
     }
     private void mostraSobreProjeto(){
         System.out.println(SobreProjeto.TEXTO);

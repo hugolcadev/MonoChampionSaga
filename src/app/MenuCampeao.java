@@ -16,7 +16,7 @@ public class MenuCampeao {
         this.sc = sc;
     }
 
-    public void iniciar(Campeao campeao){
+    public void iniciar(){
         int op;
         do{
             imprimeMenu();
