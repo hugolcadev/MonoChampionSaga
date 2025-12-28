@@ -5,7 +5,7 @@ import java.util.Scanner;
 import content.SobreProjeto;
 import model.Campeao;
 import model.NomeCampeao;
-
+import service.PersistenciaService;
 
 public class MenuInicial {
     private Scanner sc = new Scanner(System.in);
@@ -29,9 +29,10 @@ public class MenuInicial {
             menuCampeao.iniciar();
             break;
         case 2:     
-            //carregarProgressoExistente();
-            //break;       
-            //TODO
+            Campeao campeaoCarregado = PersistenciaService.carregarCampeao(sc.nextLine());
+            MenuCampeao menuCampeaoCarregado = new MenuCampeao(campeaoCarregado, sc);
+            menuCampeaoCarregado.iniciar();
+            break;       
         case 3:
             mostraSobreProjeto();
             break;

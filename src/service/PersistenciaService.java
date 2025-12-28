@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.Campeao;
+import model.NomeCampeao;
 
 public class PersistenciaService{
     private static final Gson gson = new GsonBuilder()
