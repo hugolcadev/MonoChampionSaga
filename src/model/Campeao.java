@@ -20,6 +20,10 @@ public class Campeao {
         this.nome = nome;
     }
 
+    public Campeao(){
+
+    }
+
     public void adicionarMachup(Matchup matchup){
         matchups.add(matchup);
     }

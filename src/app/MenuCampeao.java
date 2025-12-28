@@ -17,6 +17,7 @@ public class MenuCampeao {
         do{
             imprimeMenu();
             op = sc.nextInt();
+            interacoes(op);
         }while(op != 4);
     }
     
@@ -36,7 +37,23 @@ public class MenuCampeao {
                 //menuMatchups.iniciar();
                 break;
             case 2:
-                
+                editaAnotacoes();
+                break;
+            case 3:
+                //salvaCampeao();
+                break;
+            case 4: 
+                System.out.println("Voltando ao menu principal..");
+                break;
         }
     }
+
+    private void editaAnotacoes(){
+        sc.nextLine();
+        System.out.println("Novas anotações: ");
+        String novasAnotacoes = sc.nextLine();
+        campeao.setAnotacoes(novasAnotacoes);
+        System.out.println("Anotações atualizadas.");
+    }
+
 }

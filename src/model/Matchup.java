@@ -13,6 +13,10 @@ public class Matchup {
         this.oponente = nome;
     }
 
+    public Matchup(){
+
+    }
+
     public NomeCampeao getNome() {
         return oponente;
     }
