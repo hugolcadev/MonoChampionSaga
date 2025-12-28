@@ -28,7 +28,8 @@ public class MenuInicial {
             MenuCampeao menuCampeao = new MenuCampeao(campeaoPrincipal, sc);
             menuCampeao.iniciar();
             break;
-        case 2:     
+        case 2:
+            sc.nextLine();     
             Campeao campeaoCarregado = PersistenciaService.carregarCampeao(sc.nextLine());
             MenuCampeao menuCampeaoCarregado = new MenuCampeao(campeaoCarregado, sc);
             menuCampeaoCarregado.iniciar();
