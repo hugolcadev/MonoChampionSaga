@@ -13,8 +13,8 @@ public class Matchup {
         this.oponente = nome;
     }
 
-    public Matchup(){
-
+    protected Matchup(){
+        
     }
 
     public NomeCampeao getNome() {

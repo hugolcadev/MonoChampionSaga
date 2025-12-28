@@ -20,7 +20,7 @@ public class Campeao {
         this.nome = nome;
     }
 
-    public Campeao(){
+    protected Campeao(){
 
     }
 
