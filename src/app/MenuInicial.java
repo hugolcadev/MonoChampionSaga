@@ -6,7 +6,7 @@ import content.SobreProjeto;
 import model.Campeao;
 import model.NomeCampeao;
 
-public class Menu {
+public class MenuInicial {
     private Scanner sc = new Scanner(System.in);
     private int op = 0;
     public void iniciar(){
@@ -17,10 +17,10 @@ public class Menu {
         System.out.println("4. Sair.");
         System.out.println("\nEscolha uma opção");
         op = sc.nextInt();
-        interacoesMenu(op);
+        interacoes(op);
     }
     
-    private void interacoesMenu(int op){
+    private void interacoes(int op){
         switch (op){
         case 1:
             criaNovoCampeao();
