@@ -1,6 +1,10 @@
 package app;
-import model.Campeao;
 import java.util.Scanner;
+
+import model.Campeao;
+import service.PersistenciaService;
+
+
 
 public class MenuCampeao {
 
@@ -40,7 +44,7 @@ public class MenuCampeao {
                 editaAnotacoes();
                 break;
             case 3:
-                //salvaCampeao();
+                salvaCampeao();
                 break;
             case 4: 
                 System.out.println("Voltando ao menu principal..");
@@ -56,4 +60,7 @@ public class MenuCampeao {
         System.out.println("Anotações atualizadas.");
     }
 
+    private void salvaCampeao(){
+        PersistenciaService.salvarCampeao(campeao);
+    }
 }
