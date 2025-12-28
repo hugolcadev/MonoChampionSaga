@@ -5,7 +5,7 @@ import java.util.Scanner;
 import content.SobreProjeto;
 import model.Campeao;
 import model.NomeCampeao;
-import app.MenuCampeao;
+
 
 public class MenuInicial {
     private Scanner sc = new Scanner(System.in);
