@@ -29,8 +29,7 @@ public class MenuInicial {
             menuCampeao.iniciar();
             break;
         case 2:
-            sc.nextLine();     
-            Campeao campeaoCarregado = PersistenciaService.carregarCampeao(sc.nextLine());
+            Campeao campeaoCarregado = carregaCampeao();
             MenuCampeao menuCampeaoCarregado = new MenuCampeao(campeaoCarregado, sc);
             menuCampeaoCarregado.iniciar();
             break;       
@@ -56,6 +55,16 @@ public class MenuInicial {
         System.out.println("Main criado com sucesso: " + nome.getNomeExibicao());
         return new Campeao(nome, anotacoes);
     }
+
+    private Campeao carregaCampeao(){
+        List<String> listaArquivosSalvos = PersistenciaService.listarArquivosSalvos();
+        exibeListaArquivosSalvos(listaArquivosSalvos);
+        System.out.println("Digite o número correspondente ao campeão: ");
+        int escolha = sc.nextInt();
+        Campeao campeaoCarregado = PersistenciaService.carregarCampeao(listaArquivosSalvos.get(escolha-1));
+        return campeaoCarregado;
+    }
+
     private void mostraSobreProjeto(){
         System.out.println(SobreProjeto.TEXTO);
     }
@@ -89,7 +98,12 @@ public class MenuInicial {
         }else{
             return lista.get(escolha-1);
         }
+    }
 
+    private void exibeListaArquivosSalvos(List<String> lista){
+        for (int i=0; i<lista.size(); i++){
+            System.out.println((i+1) + " - " + lista.get(i));
+        }
     }
 }
 
