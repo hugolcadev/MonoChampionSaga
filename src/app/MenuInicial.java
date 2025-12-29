@@ -10,15 +10,14 @@ import service.PersistenciaService;
 public class MenuInicial {
     private Scanner sc = new Scanner(System.in);
     private int op = 0;
+    Boolean menuAtivo = true;
     public void iniciar(){
-        System.out.println("Bem vindo ao MonoChampion SAGA!");
-        System.out.println("1. Novo Main.");
-        System.out.println("2. Carregar progresso existente.");
-        System.out.println("3. Sobre o projeto.");
-        System.out.println("4. Sair.");
-        System.out.println("\nEscolha uma opção");
+        
+        do{
+        imprimeMenu();
         op = sc.nextInt();
         interacoes(op);
+        }while(menuAtivo);
     }
     
     private void interacoes(int op){
@@ -37,11 +36,20 @@ public class MenuInicial {
             mostraSobreProjeto();
             break;
         case 4:
-            //sair();
-            //break;
+            sair();
+            break;
         }
     }
-            //TODO
+    
+    void imprimeMenu(){
+        System.out.println("Bem vindo ao MonoChampion SAGA!");
+        System.out.println("1. Novo Main.");
+        System.out.println("2. Carregar progresso existente.");
+        System.out.println("3. Sobre o projeto.");
+        System.out.println("4. Sair.");
+        System.out.println("\nEscolha uma opção");
+    }
+
     private Campeao criaNovoCampeao(){
         NomeCampeao nome = selecionarCampeaoPorLetra();
 
@@ -104,6 +112,10 @@ public class MenuInicial {
         for (int i=0; i<lista.size(); i++){
             System.out.println((i+1) + " - " + lista.get(i));
         }
+    }
+
+    private void sair(){
+        menuAtivo = false;
     }
 }
 
