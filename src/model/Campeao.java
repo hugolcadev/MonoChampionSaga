@@ -27,6 +27,11 @@ public class Campeao {
     public void adicionarMachup(Matchup matchup){
         matchups.add(matchup);
     }
+
+    public List<Matchup> getMatchups(){
+        return matchups;
+    }
+
     public NomeCampeao getNome() {
         return nome;
     }
