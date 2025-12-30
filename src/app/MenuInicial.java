@@ -5,7 +5,10 @@ import java.util.Scanner;
 import content.SobreProjeto;
 import model.Campeao;
 import model.NomeCampeao;
+import service.ExibicaoUtils;
 import service.PersistenciaService;
+
+
 
 public class MenuInicial {
     private Scanner sc = new Scanner(System.in);
@@ -51,7 +54,7 @@ public class MenuInicial {
     }
 
     private Campeao criaNovoCampeao(){
-        NomeCampeao nome = selecionarCampeaoPorLetra();
+        NomeCampeao nome = selecionaCampeaoPorLetra();
 
         if (nome == null){
             return null;
@@ -77,13 +80,9 @@ public class MenuInicial {
         System.out.println(SobreProjeto.TEXTO);
     }
 
-    public void exibeListaCampeoes(List<NomeCampeao> lista){
-        for (int i=0; i<lista.size(); i++){
-            System.out.println((i+1) + " - " + lista.get(i).getNomeExibicao());
-        }
-    }
+    
 
-    private NomeCampeao selecionarCampeaoPorLetra(){
+    private NomeCampeao selecionaCampeaoPorLetra(){
 
         System.out.println("Digite a letra inicial do campeão: ");
         char x = sc.next().charAt(0);
@@ -95,7 +94,7 @@ public class MenuInicial {
             return null;
         }
 
-        exibeListaCampeoes(lista);
+        ExibicaoUtils.exibeListaCampeoes(lista);
 
         System.out.println("Digite o número correspondente ao campeão: ");
         int escolha = sc.nextInt();

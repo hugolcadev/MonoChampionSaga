@@ -38,7 +38,8 @@ public class MenuCampeao {
     private void interacoes(int op){
         switch(op){
             case 1:
-                //menuMatchups.iniciar();
+                MenuMatchups menuMatchups = new MenuMatchups(campeao, sc); 
+                menuMatchups.iniciar();
                 break;
             case 2:
                 editaAnotacoes();
