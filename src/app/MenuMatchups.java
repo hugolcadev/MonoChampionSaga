@@ -31,7 +31,7 @@ public class MenuMatchups {
         System.out.println("1. Nova matchup");
         System.out.println("2. Consultar matchups");
         System.out.println("3. Editar matchups");
-        System.out.println("4. Sair");
+        System.out.println("4. Voltar");
     }
 
 
@@ -44,13 +44,13 @@ public class MenuMatchups {
                 }
                 break;
             case 2:
-                Matchup matchup = escolheMatchup();
+                Matchup matchup = escolheMatchup("consultar");
                 if (matchup!=null){
                     consultaMatchups(matchup);
                 }
                 break;
             case 3:
-                //editaMatchup();
+                editaMatchup();
                 break;
         }
     }
@@ -73,7 +73,14 @@ public class MenuMatchups {
         System.out.println("Anotações: " + matchup.getAnotacoes());
     }
 
-    private Matchup escolheMatchup(){
+    private void editaMatchup(){
+        Matchup matchupEditada = escolheMatchup("editar");
+        System.out.println("Novas anotações: ");
+        String novasAnotacoes = sc.nextLine();
+        matchupEditada.setAnotacoes(novasAnotacoes);
+    }
+
+    private Matchup escolheMatchup(String mensagem){
         List <Matchup> matchups = campeao.getMatchups();
 
         if (matchups.isEmpty()){
@@ -85,7 +92,7 @@ public class MenuMatchups {
             System.out.println((i+1) + " - " + matchups.get(i).getNome().getNomeExibicao());
         }
 
-        System.out.println("Digite o número correspondente à matchup que deseja consultar: ");
+        System.out.println("Digite o número correspondente à matchup que deseja " + mensagem + ": ");
         int escolha = sc.nextInt();
 
         if (escolha < 1 || escolha >matchups.size()){
