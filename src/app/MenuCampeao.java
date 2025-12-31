@@ -2,6 +2,7 @@ package app;
 import java.util.Scanner;
 
 import model.Campeao;
+import service.InputUtils;
 import service.PersistenciaService;
 
 
@@ -20,7 +21,7 @@ public class MenuCampeao {
         int op;
         do{
             imprimeMenu();
-            op = sc.nextInt();
+            op = InputUtils.lerInteiro(sc, "Escolha uma opção: ");
             interacoes(op);
         }while(op != 4);
     }
@@ -32,7 +33,6 @@ public class MenuCampeao {
         System.out.println("2. Editar anotações");
         System.out.println("3. Salvar campeão");
         System.out.println("4. Voltar ao menu principal");
-        System.out.println("Escolha uma opção: ");
     }
 
     private void interacoes(int op){
@@ -54,7 +54,6 @@ public class MenuCampeao {
     }
 
     private void editaAnotacoes(){
-        sc.nextLine();
         System.out.println("Novas anotações: ");
         String novasAnotacoes = sc.nextLine();
         campeao.setAnotacoes(novasAnotacoes);

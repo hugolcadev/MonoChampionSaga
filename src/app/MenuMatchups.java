@@ -4,6 +4,7 @@ import java.util.Scanner;
 import model.Matchup;
 import model.NomeCampeao;
 import service.ExibicaoUtils;
+import service.InputUtils;
 import model.Campeao;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class MenuMatchups {
         int op;
         do{
             imprimeMenu();
-            op = sc.nextInt();
+            op = InputUtils.lerInteiro(sc, "\nEscolha uma opção: ");
             interacoes(op);
         }while(op!=4);
     }
@@ -59,7 +60,6 @@ public class MenuMatchups {
         if (nome == null){
             return null;
         }
-        sc.nextLine();
         System.out.println("Anotações da matchup: ");
         String anotacoes = sc.nextLine();
         System.out.println("Matchup criada com sucesso: " + nome.getNomeExibicao());
@@ -90,8 +90,7 @@ public class MenuMatchups {
             System.out.println((i+1) + " - " + matchups.get(i).getNome().getNomeExibicao());
         }
 
-        System.out.println("Digite o número correspondente à matchup que deseja " + mensagem + ": ");
-        int escolha = sc.nextInt();
+        int escolha = InputUtils.lerInteiro(sc, "Digite o número correspondente à matchup que deseja " + mensagem + ": ");
 
         if (escolha < 1 || escolha >matchups.size()){
             System.out.println("Opção inválida.");
@@ -102,15 +101,13 @@ public class MenuMatchups {
 
 
     private NomeCampeao selecionaCampeaoPorLetra(){
-        System.out.println("Insira a letra inicial do campeão inimigo: ");
-        char x = sc.next().charAt(0);
+        char x = InputUtils.letLetra(sc, "Insira a letra inicial do campeão inimigo: ");
 
         List <NomeCampeao> lista = NomeCampeao.filtrarPorLetra(x);
 
         ExibicaoUtils.exibeListaCampeoes(lista);
 
-        System.out.println("Digite o número correspondente ao campeão: ");
-        int escolha = sc.nextInt();
+        int escolha = InputUtils.lerInteiro(sc, "Digite o número correspondente ao campeão: ");
 
         if (escolha < 1 || escolha > lista.size()){
             System.out.println("Opção inválida.");

@@ -6,6 +6,7 @@ import content.SobreProjeto;
 import model.Campeao;
 import model.NomeCampeao;
 import service.ExibicaoUtils;
+import service.InputUtils;
 import service.PersistenciaService;
 
 
@@ -18,7 +19,7 @@ public class MenuInicial {
         
         do{
         imprimeMenu();
-        op = sc.nextInt();
+        op = InputUtils.lerInteiro(sc, "\nEscolha uma opção: ");
         interacoes(op);
         }while(menuAtivo);
     }
@@ -50,7 +51,6 @@ public class MenuInicial {
         System.out.println("2. Carregar progresso existente.");
         System.out.println("3. Sobre o projeto.");
         System.out.println("4. Sair.");
-        System.out.println("\nEscolha uma opção");
     }
 
     private Campeao criaNovoCampeao(){
@@ -60,7 +60,6 @@ public class MenuInicial {
             return null;
         }
 
-        sc.nextLine();
         System.out.println("Anotações iniciais: ");
         String anotacoes = sc.nextLine();
         System.out.println("Main criado com sucesso: " + nome.getNomeExibicao());
@@ -70,8 +69,7 @@ public class MenuInicial {
     private Campeao carregaCampeao(){
         List<String> listaArquivosSalvos = PersistenciaService.listarArquivosSalvos();
         exibeListaArquivosSalvos(listaArquivosSalvos);
-        System.out.println("Digite o número correspondente ao campeão: ");
-        int escolha = sc.nextInt();
+        int escolha = InputUtils.lerInteiro(sc, "Digite o número correspondente ao campeão: ");
         Campeao campeaoCarregado = PersistenciaService.carregarCampeao(listaArquivosSalvos.get(escolha-1));
         return campeaoCarregado;
     }
@@ -84,8 +82,7 @@ public class MenuInicial {
 
     private NomeCampeao selecionaCampeaoPorLetra(){
 
-        System.out.println("Digite a letra inicial do campeão: ");
-        char x = sc.next().charAt(0);
+        char x = InputUtils.letLetra(sc, "Digite a letra inicial do campeão: ");
 
         List <NomeCampeao> lista = NomeCampeao.filtrarPorLetra(x);
 
@@ -96,8 +93,7 @@ public class MenuInicial {
 
         ExibicaoUtils.exibeListaCampeoes(lista);
 
-        System.out.println("Digite o número correspondente ao campeão: ");
-        int escolha = sc.nextInt();
+        int escolha = InputUtils.lerInteiro(sc, "Digite o número correspondente ao campeão: ");
 
         if (escolha < 1 || escolha > lista.size()){
             System.out.println("Opção inválida.");
