@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.io.File;
 
 import model.Campeao;
-import model.NomeCampeao;
 
 public class PersistenciaService{
     private static final String PASTA = "saves/";

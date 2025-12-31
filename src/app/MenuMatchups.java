@@ -5,8 +5,6 @@ import model.Matchup;
 import model.NomeCampeao;
 import service.ExibicaoUtils;
 import model.Campeao;
-import model.NomeCampeao;
-import app.MenuInicial;
 import java.util.List;
 
 public class MenuMatchups {
