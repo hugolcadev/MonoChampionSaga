@@ -55,14 +55,14 @@ public class MenuMatchups {
     }
 
     private Matchup criaMatchup(){
-        System.out.println("Criando nova matchup..");
+        System.out.println("\nCriando nova matchup..");
         NomeCampeao nome = selecionaCampeaoPorLetra();
         if (nome == null){
             return null;
         }
-        System.out.println("Anotações da matchup: ");
+        System.out.println("\nAnotações da matchup: ");
         String anotacoes = sc.nextLine();
-        System.out.println("Matchup criada com sucesso: " + nome.getNomeExibicao());
+        System.out.println("\nMatchup criada com sucesso: " + nome.getNomeExibicao());
         return new Matchup(nome, anotacoes);
     }
 
@@ -101,13 +101,13 @@ public class MenuMatchups {
 
 
     private NomeCampeao selecionaCampeaoPorLetra(){
-        char x = InputUtils.letLetra(sc, "Insira a letra inicial do campeão inimigo: ");
+        char x = InputUtils.letLetra(sc, "\nInsira a letra inicial do campeão inimigo: ");
 
         List <NomeCampeao> lista = NomeCampeao.filtrarPorLetra(x);
 
         ExibicaoUtils.exibeListaCampeoes(lista);
 
-        int escolha = InputUtils.lerInteiro(sc, "Digite o número correspondente ao campeão: ");
+        int escolha = InputUtils.lerInteiro(sc, "\nDigite o número correspondente ao campeão: ");
 
         if (escolha < 1 || escolha > lista.size()){
             System.out.println("Opção inválida.");

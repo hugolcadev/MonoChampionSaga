@@ -46,7 +46,7 @@ public class MenuInicial {
     }
     
     void imprimeMenu(){
-        System.out.println("Bem vindo ao MonoChampion SAGA!");
+        System.out.println("Bem vindo ao MonoChampion SAGA!\n");
         System.out.println("1. Novo Main.");
         System.out.println("2. Carregar progresso existente.");
         System.out.println("3. Sobre o projeto.");
@@ -60,9 +60,9 @@ public class MenuInicial {
             return null;
         }
 
-        System.out.println("Anotações iniciais: ");
+        System.out.println("\nAnotações iniciais: ");
         String anotacoes = sc.nextLine();
-        System.out.println("Main criado com sucesso: " + nome.getNomeExibicao());
+        System.out.println("\nMain criado com sucesso: " + nome.getNomeExibicao());
         return new Campeao(nome, anotacoes);
     }
 
@@ -82,7 +82,7 @@ public class MenuInicial {
 
     private NomeCampeao selecionaCampeaoPorLetra(){
 
-        char x = InputUtils.letLetra(sc, "Digite a letra inicial do campeão: ");
+        char x = InputUtils.letLetra(sc, "\nDigite a letra inicial do campeão: ");
 
         List <NomeCampeao> lista = NomeCampeao.filtrarPorLetra(x);
 
@@ -90,10 +90,10 @@ public class MenuInicial {
             System.out.println("Nenhum campeão encontrado.");
             return null;
         }
-
+        
         ExibicaoUtils.exibeListaCampeoes(lista);
 
-        int escolha = InputUtils.lerInteiro(sc, "Digite o número correspondente ao campeão: ");
+        int escolha = InputUtils.lerInteiro(sc, "\nDigite o número correspondente ao campeão: ");
 
         if (escolha < 1 || escolha > lista.size()){
             System.out.println("Opção inválida.");

@@ -21,14 +21,14 @@ public class MenuCampeao {
         int op;
         do{
             imprimeMenu();
-            op = InputUtils.lerInteiro(sc, "Escolha uma opção: ");
+            op = InputUtils.lerInteiro(sc, "\nEscolha uma opção: ");
             interacoes(op);
         }while(op != 4);
     }
     
 
     private void imprimeMenu(){
-        System.out.println("Menu do campeão: " + campeao.getNome().getNomeExibicao());
+        System.out.println("\nMenu do campeão: " + campeao.getNome().getNomeExibicao() + "\n");
         System.out.println("1. Matchups");
         System.out.println("2. Editar anotações");
         System.out.println("3. Salvar campeão");
