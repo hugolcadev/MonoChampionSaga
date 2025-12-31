@@ -1,4 +1,4 @@
-Sobre o projeto
+## Sobre o projeto
 
 Este é um projeto pessoal que desenvolvi com o objetivo de auxiliar jogadores de League of Legends - um jogo que gosto muito - a alcançar um alto nível de performance.
 
